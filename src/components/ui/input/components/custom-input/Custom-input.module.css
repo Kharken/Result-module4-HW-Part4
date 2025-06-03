@@ -1,0 +1,90 @@
+.no__element {
+  display: none;
+}
+
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  input {
+
+    .input__error {
+      border: 1px solid red;
+      outline: none;
+    }
+
+    &:focus{
+      border: 1px solid blue;
+      outline: none;
+    }
+  }
+
+
+  [placeholder] {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-block: 5px;
+    padding-left: 20px;
+  }
+
+  .label__wrapper {
+    font-size: 0.8rem;
+    align-self: flex-start;
+    font-weight: 500;
+  }
+
+  .input__description {
+    font-size: 0.8rem;
+    align-self: flex-start;
+    font-weight: 300;
+  }
+
+  .input__error__description {
+    font-size: 0.8rem;
+    align-self: flex-start;
+    font-weight: 500;
+    color: red;
+  }
+
+  .input__error::placeholder{
+    color: red;
+  }
+
+}
+
+.asterisk {
+  color: red;
+  margin-left: 2px;
+}
+
+.input__generally {
+  border: 1px solid teal;
+  border-radius: 2px;
+
+  &[placeholder] {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 5px;
+  }
+}
+
+.input__generally-filled {
+  background-color: lightgray;
+}
+
+.input__generally-unstyled {
+
+  border: none;
+  align-self: flex-start;
+  background: transparent;
+
+  &[placeholder] {
+    padding-left: 0;
+  }
+}
+

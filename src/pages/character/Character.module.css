@@ -1,0 +1,11 @@
+.character-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.character-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

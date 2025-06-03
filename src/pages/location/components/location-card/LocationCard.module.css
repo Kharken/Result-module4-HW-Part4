@@ -1,0 +1,72 @@
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-inline: auto;
+    margin-top: 1rem;
+}
+
+.card::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: #4CAF50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.card-content {
+    padding: 35px 25px 25px;
+}
+
+.card-title {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-number {
+    background: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.air-date {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.created-date {
+    display: block;
+    text-align: center;
+    color: #95a5a6;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ecf0f1;
+}
