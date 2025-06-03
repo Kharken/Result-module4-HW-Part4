@@ -1,10 +1,20 @@
-import {ChangeEvent, FormEvent, useEffect, useRef, useState} from "react";
-import {InputState} from "../types/input-types";
+import {ChangeEvent, FormEvent, useRef, useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {ROUTES} from "../routes/routes";
+import {UserState} from "../types/app-types";
+import {useAuth} from "./useAuth";
 
 export const useInput = () => {
-    const [formData, setFormData] = useState<Partial<InputState>>({});
-    const [comparedPasswordsValue, setComparedPasswordsValue] = useState(false);
+    const auth = useAuth();
+
+    const userInitialState: UserState = {
+        email: '',
+        password: '',
+    };
+
+    const [formData, setFormData] = useState<UserState>(userInitialState);
     const formRef = useRef<HTMLFormElement>(null);
+    const navigate = useNavigate();
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setFormData((prev) => ({
@@ -14,22 +24,22 @@ export const useInput = () => {
     };
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
+        setFormData(formData);
+        auth?.signIn(formData, () => {
+            navigate(ROUTES.Index)
+        })
+        navigate(ROUTES.Index);
+
+    };
+    const handleReset = (event: FormEvent) => {
+
+        event.preventDefault();
         if (formRef.current) {
             formRef.current.reset();
         }
-    };
-    const handleReset = (event: FormEvent) => {
-        event.preventDefault();
-        setFormData({});
-
+        setFormData(userInitialState);
     };
 
-    useEffect(() => {
-        setComparedPasswordsValue(
-            formData.password === formData.confirmedPassword &&
-            formData.password !== undefined,
-        );
-    }, [formData.password, formData.confirmedPassword]);
 
-    return { formData, handleInputChange, handleSubmit, formRef, handleReset, comparedPasswordsValue };
+    return {formData, handleInputChange, handleSubmit, formRef, handleReset};
 };

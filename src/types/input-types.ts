@@ -31,10 +31,6 @@ export interface InputProps {
 export interface InputState {
     email: string;
     password: string;
-    confirmedPassword: string;
-    nickName: string;
-    userName: string;
-    gender: string;
 }
 
 export interface DisabledProps {

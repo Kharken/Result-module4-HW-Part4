@@ -5,7 +5,6 @@ import {InputName} from "../types/input-types";
 export const useError = (name: InputName, value: string) => {
 
     const [isError, setIsError] = useState(false);
-    const { comparedPasswordsValue } = useInput();
 
     const regexes = useMemo(() => ({
         userName: /^[A-Za-zА-Яа-яЁё]{2,25}$/u,
@@ -44,5 +43,5 @@ export const useError = (name: InputName, value: string) => {
     }, [name, value, regexes]);
 
 
-    return { isError, isEmpty, comparedPasswordsValue };
+    return { isError, isEmpty };
 };

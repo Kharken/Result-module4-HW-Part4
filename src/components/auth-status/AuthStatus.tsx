@@ -13,12 +13,19 @@ export const AuthStatus = () => {
     }
 
     if (auth && auth.user === null) {
-        return <p>You are not logged in</p>
+        return(
+            <div className="container auth__wrapper">
+            <p>You are not logged in!</p>
+                <button onClick={() => {
+                    navigate(ROUTES.Login)
+                }}>Login</button>
+            </div>
+        )
     }
 
     return (
         <div>
-            <span>Welcome user {auth?.user?.login}</span>
+            <span>Welcome user {auth?.user?.email}</span>
             <button onClick={handleSignOut}>Sign Out</button>
         </div>
     )

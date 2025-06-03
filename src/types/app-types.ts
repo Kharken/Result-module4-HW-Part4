@@ -1,11 +1,11 @@
 import {ReactNode} from "react";
 
-export interface AuthProviderProps {
+export interface ChildrenProps {
     children: ReactNode;
 }
 
 export interface UserState {
-    login: string;
+    email: string;
     password: string;
 }
 

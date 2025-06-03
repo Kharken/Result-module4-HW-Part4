@@ -1,0 +1,27 @@
+.login__wrapper {
+
+}
+
+button{
+    padding-block: 8px;
+    padding-inline: 16px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+
+    &.submit{
+        background-color: rgba(98, 130, 242, 0.2);
+    }
+    &.reset{
+        background-color: rgba(98, 130, 242, 0.5);
+    }
+}
+
+.link {
+    display: block;
+    margin-inline: auto;
+    text-align: center;
+    margin-top: 16px;
+    text-decoration: none;
+    font-size: 2rem;
+}

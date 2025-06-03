@@ -12,6 +12,7 @@ import {LocationCard} from "../pages/location/components/location-card/LocationC
 import {NotFound} from "../pages/not-found-page/NotFound";
 import {AuthProvider} from "./context/auth-provider/AuthProvider";
 import {Login} from "../pages/login/Login";
+import {PrivateRoute} from "../components/private-route/PrivateRoute";
 
 export const App = () => {
     return (
@@ -26,22 +27,22 @@ export const App = () => {
                             element={<Main/>}/>
                         <Route
                             path={ROUTES.Characters}
-                            element={<Character/>}/>
+                            element={<PrivateRoute><Character/></PrivateRoute>}/>
                         <Route
                             path={ROUTES.Character}
-                            element={<CharacterCard/>}/>
+                            element={<PrivateRoute><CharacterCard/></PrivateRoute>}/>
                         <Route
                             path={ROUTES.Episodes}
-                            element={<Episode/>}/>
+                            element={<PrivateRoute><Episode/></PrivateRoute>}/>
                         <Route
                             path={ROUTES.Episode}
-                            element={<EpisodeCard/>}/>
+                            element={<PrivateRoute><EpisodeCard/></PrivateRoute>}/>
                         <Route
                             path={ROUTES.Locations}
-                            element={<Location/>}/>
+                            element={<PrivateRoute><Location/></PrivateRoute>}/>
                         <Route
                             path={ROUTES.Location}
-                            element={<LocationCard/>}/>
+                            element={<PrivateRoute><LocationCard/></PrivateRoute>}/>
                     </Route>
                     <Route
                         path={ROUTES.NotFound}
