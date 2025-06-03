@@ -8,7 +8,7 @@
 
 * General - this project shows solution of tasks of 'React Context API' module
 * Project objectives:
-  * task-1: creation of app with main page, which contains greeting and navigation menu, category page, which contains list of elements of every using data category and element page with all data information for every data item
+  * task-1: create page with Login form; create private pages using Context API
 
 ### Install
 
